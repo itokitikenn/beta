@@ -10,8 +10,9 @@
             text-align: center;
             margin-top: 50px;
         }
-        #diceResult {
-            font-size: 2em;
+        #diceImage {
+            width: 100px;
+            height: 100px;
             margin-top: 20px;
         }
         #rollButton {
@@ -23,12 +24,14 @@
 <body>
     <h1>サイコロを振る</h1>
     <button id="rollButton">サイコロを振る</button>
-    <div id="diceResult">-</div>
+    <div>
+        <img id="diceImage" src="dice1.png" alt="サイコロの面">
+    </div>
 
     <script>
         document.getElementById('rollButton').addEventListener('click', function() {
             var result = Math.floor(Math.random() * 6) + 1;
-            document.getElementById('diceResult').innerText = result;
+            document.getElementById('diceImage').src = 'dice' + result + '.png';
         });
     </script>
 </body>
